@@ -1,0 +1,13 @@
+LOG:  database system was shut down at 2015-06-17 17:46:32 CLT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  insert or update on table "provinces" violates foreign key constraint "fk_rails_5aca3eede1"
+DETAIL:  Key (region_id)=(15) is not present in table "regions".
+STATEMENT:  INSERT INTO "provinces" ("name", "region_id", "id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"
+ERROR:  update or delete on table "regions" violates foreign key constraint "fk_rails_5aca3eede1" on table "provinces"
+DETAIL:  Key (id)=(1) is still referenced from table "provinces".
+STATEMENT:  DELETE FROM "regions"
+ERROR:  duplicate key value violates unique constraint "regions_pkey"
+DETAIL:  Key (id)=(1) already exists.
+STATEMENT:  INSERT INTO "regions" ("number", "name", "title", "id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"
