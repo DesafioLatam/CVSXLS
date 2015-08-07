@@ -11,3 +11,19 @@ STATEMENT:  DELETE FROM "regions"
 ERROR:  duplicate key value violates unique constraint "regions_pkey"
 DETAIL:  Key (id)=(1) already exists.
 STATEMENT:  INSERT INTO "regions" ("number", "name", "title", "id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"
+ERROR:  missing FROM-clause entry for table "bids" at character 40
+STATEMENT:  SELECT COUNT(*) FROM "products" WHERE (bids.count > 0)
+ERROR:  missing FROM-clause entry for table "bids" at character 40
+STATEMENT:  SELECT COUNT(*) FROM "products" WHERE (bids.count > 0)
+ERROR:  column products.active does not exist at character 39
+STATEMENT:  SELECT COUNT(*) FROM "products" WHERE "products"."active" = 'f'
+ERROR:  column products.active does not exist at character 39
+STATEMENT:  SELECT COUNT(*) FROM "products" WHERE "products"."active" = 'f'
+ERROR:  column products.active does not exist at character 39
+STATEMENT:  SELECT COUNT(*) FROM "products" WHERE "products"."active" = 'f'
+ERROR:  column "bid_id" does not exist at character 44
+STATEMENT:  SELECT "products".* FROM "products" WHERE (bid_id is not NULL)
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
